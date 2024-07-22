@@ -99,7 +99,7 @@ async function updateUserByIdFromDB({ userId, userData }) {
 			},
 			UpdateExpression: "set " + attributeValues,
 			ExpressionAttributeValues: updateValues,
-			ReturnValues: "UPDATED_NEW",
+			ReturnValues: "ALL_NEW",
 		};
 
 		const updatedUser = await dynamoDB.update(params).promise();
