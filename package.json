@@ -1,0 +1,24 @@
+{
+  "name": "my-serverless-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+   "deploy:staging": "npm install && serverless deploy --stage staging --aws-profile default",
+    "v1:post": "serverless invoke local --function main --path requests/v1/posts/user.json",
+    "v1:get": "serverless invoke local --function main --path requests/v1/gets/all-user.json",
+    "v1:delete": "serverless invoke local --function main --path requests/v1/deletes/user.json",
+    "v1:put": "serverless invoke local --function main --path requests/v1/puts/user.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "aws-sdk": "^2.1659.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "serverless-http": "^3.2.0",
+    "uuid": "^10.0.0"
+  }
+}

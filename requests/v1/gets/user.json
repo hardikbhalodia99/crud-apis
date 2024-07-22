@@ -1,0 +1,9 @@
+{
+  "httpMethod": "GET",
+  "path": "/v1/user/72a10d92-ee24-47e4-94d6-f7dc3c2e5f9b",
+  "headers": {
+    "x-api-key": "uHgKSB13Tug9G0RO7oJcbyA5OIntIaXZ"
+  },
+  "pathParameters": null,
+  "stageVariables": null
+}

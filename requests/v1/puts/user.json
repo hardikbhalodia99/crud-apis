@@ -1,0 +1,16 @@
+{
+  "httpMethod": "PUT",
+  "path": "/v1/user/72a10d92-ee24-47e4-94d6-f7dc3c2e5f9b",
+  "headers": {
+    "Content-Type": "application/json",
+    "x-api-key": "uHgKSB13Tug9G0RO7oJcbyA5OIntIaXZ"
+  },
+  "body": {
+    "first_name": "Hardik",
+    "last_name": "Bhalodia",
+    "phone": "6355129211",
+    "email": "hardikbhalodia999@gmail.com"
+  },
+  "pathParameters": null,
+  "stageVariables": null
+}

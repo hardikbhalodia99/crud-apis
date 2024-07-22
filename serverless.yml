@@ -1,0 +1,33 @@
+service: my-serverless-app
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${opt:stage, 'staging'}
+  region: ap-south-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "dynamodb:*"
+      Resource: "arn:aws:dynamodb:${self:provider.region}:864899827484:table/${self:custom.tableName}"
+  environment:
+    USERS_TABLE: ${ssm:/${self:provider.stage}/table/users}
+    V1_API_KEY: ${ssm:/${self:provider.stage}/api-key/v1-api-key}
+
+custom:
+  tableName: users-${self:provider.stage}
+  
+functions:
+  main:
+    handler: index.handler
+    memorySize: 1024
+    timeout: 30
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: /{proxy+}
+
+
